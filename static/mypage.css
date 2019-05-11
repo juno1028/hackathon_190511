@@ -8,10 +8,18 @@
   
 .my_profile{
     display: flex;
-    width: 100%;
+    width: 100vw;
     /* border: blue 3px solid; */
     padding: 30px 40px;
 
+   
+
+}
+
+.profile_box{
+    display: flex;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
 }
 
 .my_profile p{

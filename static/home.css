@@ -113,6 +113,7 @@ body {
     padding: 80px 0;
     line-height: normal;
     transition: 0.7s;
+    z-index: 100;
   }
 
   .menu a {
@@ -148,10 +149,16 @@ body {
   height: 50px;
 }
 
+.body2{
+  display: flex;
+  justify-content: center;
+  -webkit-flex-flow: row wrap;
+}
+
 .category {
   display: flex;
   height: 50px;
-  width: 100vw;
+  width: 70%;
   background-color: black;
   color: white;
   font-size: 20px;
@@ -163,16 +170,7 @@ body {
   margin-top: 20px;
 }
 
-@keyframes slideUp {
-  from {
-    left: 0;
-    top: 0;
-  }
-  to {
-    left: 0px;
-    top: 200px;
-  }
-}
+
 
 .sliding {
   height: 500px;
@@ -181,14 +179,66 @@ body {
   overflow: hidden;
   justify-content: center;
   margin-bottom: 20px;
+  background-image: url(밤하늘.jpg) ;
+}
+
+figure{
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 10s slider infinite;
+}
+
+figure img{
+  width: 20%;
+  float: left;
+}
+
+@keyframes slider{
+  0%{
+    left : 0;
+  }
+
+  20%{
+    left : 0;
+  }
+
+  25%{
+    left: -100%;
+  }
+
+  45%{
+    left: -100%;
+  }
+
+  50%{
+    left:-200%;
+  }
+
+  70%{
+    left: -200%;
+  }
+
+  75%{
+    left: -300%
+  }
+
+  95%{
+    left: -300%
+  }
+
+  100%{
+    left: -400%
+  }
 }
 
 .sliding_content {
-  display: inline-flex;
-  animation: slideUp 5s infinite;
+  /* display: inline-flex; */
+  /* animation: slideUp 5s infinite; */
   height: 100%;
   width: 100%;
-  background: url(books1.jpg);
+  /* background: url(books1.jpg); */
 }
 
 .list {
@@ -200,7 +250,7 @@ body {
   margin-top : 20px;
   margin-bottom: 60px;
   height: fit-content;
-  width: 100%;
+  width: 70%;
   justify-content: flex-start;
   background: rgb(238, 236, 236);
 

@@ -2,26 +2,44 @@
 
     {% block content %}
     {{ post.update_counter }}
-    <div class="detail">
-        전체
-        <div class="diretor_profile">
-            <a href="{% url 'dit_detail' %}">{{ post.director }}</a> 
-            감독 연락처
-            {{ post.img.url }}
-        </div>
-        <div class="video">
-            video<br>
-            여기다가 영상 띄우기
-            <br>
-            <br>
-            <div class="video_info">
-                {{ post.title }}
-                {{ post.created_date }}
-                출연진 정보
+    <div class="detail_wrapper">
+        <div class="video_wrapper">
+            <div class="video">
+                <iframe
+                src="https://www.youtube.com/embed/bPNDnoZoIWg"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                ></iframe>
+            </div>
+        </div>    
+        <div class="category">감독 프로필</div>
+        <div class="list">
+            
+            <div class="diretor_profile">
+                <div class="director_profile_photo"></div>
+
+                <div class="director_profile_text">
+                    <a href="{% url 'dit_detail' %}">{{ post.director }}</a> 
+                    <div class="director_email">madoranna@ma.ma</div>
+                </div>    
+            </div>
+            <div class="other_info">
+                
+                <div class="video_info">
+                    <div class="video_title">진실의 방으로</div>
+                    <div class="video_date">2019</div>
+                    <div class="video_actor">주연 마동석 조연 마동석 단역 마동석</div>
+                </div>
             </div>
         </div>
 
-        <div class="comment">
+        <a href="{% url 'like' post.pk %}">좋아요</a>
+        <a href="{% url 'delete' post.pk %}">삭제하기</a>
+        <a href="{% url 'edit' post.pk %}">수정하기</a>
+        <a href="{% url 'home' %}">글 목록으로 돌아가기</a>
+
+        <div class="category">Comment</div>
             <ul>
             {% for comment in post.comments.all %}
                 <li>{{ comment.content }}<a href="{% url 'delete_comment' post.pk comment.pk %}">삭제하기</a></li>
@@ -34,13 +52,24 @@
             </form>
         </div>
 
-        <div class="contnet_bar">
-            추천 영상
+        <div class="category">추천 영화</div>
+        <div class="list">  
+
+            {% for post in posts %}
+            <a href="{% url 'detail' post.pk %}">
+            <div class="thumbnail">
+                <div><img src="{{ post.img.url }}" class="poster"></div>
+                <div class="thumbnail_txt">
+                    
+                    <div class="th_title">{{ post.title }}</div>
+                    <div class="th_content">{{ post.content }}</div>
+                    <i class="fas fa-play"> 100</i>
+                    <i class="far fa-heart"> 128</i>
+                </div>
+            </div>
+            </a>
+        {% endfor %}
         </div>
-        <a href="{% url 'like' post.pk %}">좋아요</a>
-        <a href="{% url 'delete' post.pk %}">삭제하기</a>
-        <a href="{% url 'edit' post.pk %}">수정하기</a>
-        <a href="{% url 'home' %}">글 목록으로 돌아가기</a>
     </div>
     {% endblock %}
 
