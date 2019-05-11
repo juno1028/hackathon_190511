@@ -1,0 +1,88 @@
+{% extends "home.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="crowd_Navbar">
+      <div class="range">
+        <div>로고</div>
+        <div>검색</div>
+        <div>프로젝트 게시하기</div>
+      </div>
+    </div>
+    {% block content %}
+    <div class="introduce">
+      <p class="genre">성장 드라마</p>
+      <h1>{{ cfpost.title }}</h1>
+      <div class="profile">
+          <img src="{% static 'books1.jpg' %}"/>
+        <p class="director_name">{{ cfpost.director }}</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="range">
+        <div class="range_top">
+          <img src="{{ cfpost.img.url }}" />
+          <div class="right">
+            <p class="no_margin">모인금액</p>
+            <div class="inline">
+              <p class="big_font">587.000원</p>
+              <p>167%</p>
+            </div>
+            <p class="no_margin">남은시간</p>
+            <div class="inline">
+              <p class="big_font">11</p>
+              <p>{{ cfpost.duration }}일</p>
+            </div>
+            <p class="no_margin">후원자</p>
+            <div class="inline">
+              <p class="big_font">37</p>
+              <p>명</p>
+            </div>
+            <div class="condition">
+              <p>펀딩 진행중</p>
+              <pre>
+목표 금액인 350,000원이 모여야만 결제됩니다. 
+결제는 2019년 5월23일에 다함께 진행됩니다.
+              </pre>
+            </div>
+            <div class="button">
+              <button type="button">프로젝트 밀어주기</button>
+              <a href="#"><i class="fas fa-share-alt-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sub_navbar">
+        <div class="sub_range">
+          <a href="#">스토리</a>
+          <a href="#">커뮤니티</a>
+          <a href="#">환불 및 교환</a>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="array">
+        <div class="left">
+          <pre></pre>
+        </div>
+        <div class="right">
+          <div class="director"></div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
