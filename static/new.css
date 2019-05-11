@@ -1,0 +1,39 @@
+.new{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.new_form{
+    display: flex;
+ 
+    padding-top: 30px;
+    width: 70%;
+    flex-wrap: wrap;
+    /* border: 3px blue solid; */
+    justify-content: center;
+}
+
+.new_form p{
+    display: flex;
+    width: 300px;
+    height: fit-content;
+    /* border: 3px red solid; */
+    margin: 5px 30px;
+    justify-content: center;
+}
+
+#id_content{
+    width: 500px;
+    height: 150px;
+}
+
+#id_title, #id_director, #id_created_date{
+    margin: 0 10px;
+}
+
+#id_rating1, #id_rating2, #id_rating3, #id_img, #id_content{
+    margin-left: 10px;
+}
+

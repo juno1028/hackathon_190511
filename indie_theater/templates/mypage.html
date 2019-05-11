@@ -3,52 +3,83 @@
 
     {% block content %}
     <div class="myprofile">
-        
-        <div class="my_profile">
-            <div class="profile_pic"><img class="circle" src="{% static '밤하늘.jpg' %}" /></div>
-            <p>{{ user.username }}님</p>
-        </div>
-
-        <div class="category">내가 본 영화</div>
-
-        <div class="content">
-            <div class="range">
-
-            {% for post in posts %}
-            <a href="{% url 'detail' post.pk %}">
-            <div class="thumbnail">
-                <div class="poster"></div>
-                <div class="th_title">{{ post.title }}</div>
-                <div class="th_content">{{ post.content }}</div>
-                <i class="fas fa-play"> {{ post.post_hit }}</i>
-                <i class="far fa-heart"> {{ post.post_like }}</i>
+        <div class="profile_box">
+            <div class="my_profile">
+                <div class="profile_pic"><img class="circle" src="{% static '밤하늘.jpg' %}" /></div>
+                <p>{{ user.username }}님</p>
             </div>
-            </a>
-            {% endfor %}
 
-            </div> 
-        </div>
+            
+            <div class="category">내가 본 영화</div>
+
+            <div class="list">
+
+                {% for post in posts %}
+                <a href="{% url 'detail' post.pk %}">
+                <div class="thumbnail">
+                    <div><img src="{{ post.img.url }}" class="poster"></div>
+                    
+                    <div class="th_title">{{ post.title }}</div>
+                    <div class="th_content">{{ post.content }}</div>
+                    <i class="fas fa-play"> {{ post.post_hit }}</i>
+                    <i class="far fa-heart"> {{ post.post_like }}</i>
+                    
+                </div>
+                </a>
+                {% endfor %}
+
+            </div>
     
     </div>
 
-    <div class="category">결제</div>
-    <div class="content">
-        <div class="range">
-            <div class="payment_menu">
-            </div>
+    <div class="category">결제 내역</div>
+    <div class="list">
+        <div class="payment_menu">
+            <table class="table">
+                <thead>
+                    <tr>
+                    
+                    <th scope="col">날짜</th>
+                    <th scope="col">결제 내용</th>
+                    <th scope="col">금액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    
+                    <td>5/09</td>
+                    <td>정기권 구매</td>
+                    <td>100,000원</td>
+                    </tr>
+                    <tr>
+                    
+                    <td>4/09</td>
+                    <td>정기권 구매</td>
+                    <td>100,000원</td>
+                    </tr>
+                    <tr>
+                    
+                    <td>3/09</td>
+                    <td>정기권 구매</td>
+                    <td>100,000원</td>
+                    </tr>
+                </tbody>
+            </table>
             
+            <div class="payment_btn">
+                <div type="button" class="btn btn-success btn-lg btn-block">정기권 구매하기</div>
+            </div>
         </div>
     </div>
 
     <div class="category">추천영화</div>
 
-    <div class="content">
-        <div class="range">
+    <div class="list">
 
             {% for post in posts %}
             <a href="{% url 'detail' post.pk %}">
             <div class="thumbnail">
-                <div class="poster"></div>
+                <div><img src="{{ post.img.url }}" class="poster"></div>
                 <div class="th_title">{{ post.title }}</div>
                 <div class="th_content">{{ post.content }}</div>
                 <i class="fas fa-play"> {{ post.post_hit }}</i>
@@ -57,7 +88,7 @@
             </a>
             {% endfor %}
 
-        </div> 
+    </div>
     </div>
 
 
