@@ -1,7 +1,7 @@
 body {
   display: flex;
   display: -webkit-flex;
-  margin: 0;
+  /* margin: 0; */
   padding-bottom: 100px;
   /* height: 100vh; */
   /* justify-content: center; */
@@ -150,7 +150,7 @@ body {
 
 .category {
   display: flex;
-  height: 35px;
+  height: 50px;
   width: 100vw;
   background-color: black;
   color: white;
@@ -226,7 +226,6 @@ body {
 }
 
 .poster {
-  background: url(books1.jpg);
   height: 220px;
   width: 300px;
   margin-bottom: 5px;
@@ -251,6 +250,7 @@ a:active {
 }
 
 .th_title {
+  padding-left: 10px;
   color: black;
   font-weight: bold;
   font-size: 20px;
@@ -263,124 +263,27 @@ a:active {
 
 .th_content {
   color: rgb(114, 113, 113);
-  
-  width: 250px;
+  padding-left: 10px;
+  width: 275px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* number of lines to show */
-  line-height: X;        /* fallback */
-  max-height: X*N;       /* fallback */
   margin-bottom: 8px;
 }
 
 .fa-play {
   color: rgb(114, 113, 113);
   font-size: 15px;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .fa-heart {
   color: rgb(114, 113, 113);
   text-align: right;
   font-size: 16px;
-  padding: 0 10px;
-}
-
-/* crowdfunding.html */
-.post {
-  width: 250px;
-  height: 300px;
-  border: 1px solid royalblue;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  background: white;
-}
-
-
-.pre {
-  width: 100%;
-  height: 300px;
-  /* border: 1px solid red; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.pre_text {
-  width: 90%;
-  /* border: 1px solid orange; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.oneline a {
-  text-decoration: none;
-}
-.pre_image {
-  width: 90%;
-  /* border: 1px solid chocolate; */
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-.pre_image div {
-  /* border: 1px solid gray; */
-}
-.pre_image img {
-  width: 156px;
-  height: 87.75px;
-  border-radius: 10px;
-}
-.img_title {
-  margin-top: 5px;
-  margin-bottom: 0;
-  width: 150px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.img_subtitle {
-  margin-top: 1px;
-  margin-bottom: 0;
-  width: 100px;
-  font-size: 11px;
-  font-weight: bold;
-  color: grey;
-}
-
-.second_Navbar {
-  width: 100%;
-  height: 70px;
-  /* border: 1px solid green; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-top: 1px solid silver;
-  border-bottom: 1px solid silver;
-}
-
-.second_Navbar .range {
-  width: 90%;
-  height: 70px;
-  /* border: 1px solid rebeccapurple; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.second_Navbar .range a {
-  text-decoration: none;
-  color: black;
-}
-.range {
-  margin: 0;
-}
-.range label {
-  font-weight: bolder;
-  font-size: 13px;
+  padding: 0 20px;
 }
 
 .content {
@@ -392,351 +295,4 @@ a:active {
   background: rgb(238, 236, 236);
 }
 
-.content .range {
-  margin-top: 30px;
-  width: 90%;
-  /* border: 1px solid rosybrown; */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-}
 
-
-
-.post img {
-  width: 250px;
-  height: 200px;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-
-.post .title {
-  font-size: 12px;
-  font-weight: bold;
-  /* border: 1px solid royalblue; */
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.post .director {
-  margin-top: 5px;
-  font-size: 11px;
-  /* border: 1px solid royalblue; */
-}
-
-.post_bottom {
-  margin-top: 0;
-  /* border: 1px solid teal; */
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.duration {
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  /* border: 1px solid tan; */
-}
-
-.duration p {
-  font-size: 10px;
-}
-
-.number {
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.investment {
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.rate {
-  margin-left: 10px;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-/* crowd_detail.html */
-
-.introduce {
-  width: 100%;
-  height: 200px;
-  border: 2px solid indianred;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.genre {
-  color: grey;
-  font-size: 13px;
-  font-weight: bold;
-  border: 1px solid rgb(228, 224, 224);
-  background-color: ghostwhite;
-}
-
-h1 {
-  margin: 0;
-}
-
-.director_name {
-  font-weight: bold;
-  font-size: 13px;
-}
-
-.profile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.profile img {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-.main {
-  width: 100%;
-  height: 600px;
-  border: 2px solid indigo;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main .range {
-  width: 90%;
-  height: 500px;
-  border: 2px solid orange;
-  display: flex;
-  flex-direction: column;
-}
-
-.range_top {
-  width: 100%;
-  height: 500px;
-  /* border: 2px solid palegreen; */
-  display: flex;
-  flex-direction: row;
-}
-
-.range_top img {
-  width: 60%;
-  height: auto;
-}
-
-.range_top .right {
-  width: 500px;
-  height: 470px;
-  border: 2px solid palevioletred;
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
-  padding-top: 30px;
-  margin: 0;
-}
-
-.no_margin {
-  margin: 0;
-}
-
-.inline {
-  height: 60px;
-  /* border: 2px solid peru; */
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  margin: 0;
-}
-.inline p {
-  margin-top: 0;
-}
-
-.big_font {
-  font-size: 30px;
-  color: red;
-  margin-right: 5px;
-}
-
-.condition {
-  width: 390px;
-  display: flex;
-  flex-direction: column;
-  /* border: 1px solid purple; */
-  margin: 0;
-  padding-left: 20px;
-  background-color: rgb(238, 238, 238);
-}
-
-.condition p {
-  /* margin: 0; */
-  font-weight: bolder;
-}
-.condition pre {
-  margin: 0;
-}
-
-.button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.button button {
-  width: 300px;
-  height: 50px;
-  color: white;
-  background-color: rgb(228, 105, 125);
-}
-
-.button a {
-  text-decoration: none;
-}
-
-.button i {
-  font-size: 30px;
-}
-
-.sub_navbar {
-  width: 100%;
-  height: 100px;
-  border: 2px solid orangered;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.sub_range {
-  width: 90%;
-  height: 100px;
-  border: 2px solid orchid;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.sub_range a {
-  margin-right: 20px;
-  text-decoration: none;
-}
-
-.detail {
-  width: 100%;
-  height: 1000px;
-  border: 2px solid olive;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.array {
-  width: 90%;
-  height: 1000px;
-  border: 1px solid red;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.array .left {
-  width: 100%;
-  height: 700px;
-  border: 1px solid aquamarine;
-}
-
-.array .right {
-  width: 100%;
-  height: 700px;
-  border: 1px solid saddlebrown;
-}
-
-.director {
-  width: 100%;
-  height: 200px;
-  /* border: 1px solid salmon; */
-}
-
-/* payment.html */
-
-.top {
-  width: 100%;
-  height: 300px;
-  border: 1px solid thistle;
-}
-
-.bottom {
-  width: 100%;
-  height: 1000px;
-  border: 1px solid tomato;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.range {
-  width: 90%;
-  /* border: 1px solid turquoise; */
-  margin-bottom: 20px;
-}
-.a {
-  width: 100%;
-  height: 100px;
-  border: 1px solid yellowgreen;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-/*mypage.html*/
-.myprofile{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  /* border: blue 1px solid; */
-}
-
-.my_profile{
-  display: flex;
-  width: 100%;
-  /* border: blue 3px solid; */
-  padding: 30px 40px;
-  
-}
-
-.my_profile p{
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.profile_pic{
-  display: flex;
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  /* border: blue 3px solid; */
-  margin-right: 20px;
-}
-
-.circle{
-  border-radius: 100%;
-  border: 1px solid rgb(224,224,224);
-  width: 100px;
-  height: 100px;
-}
-
-.payment_menu{
-  width: 100%;
-  height: 300px;
-}

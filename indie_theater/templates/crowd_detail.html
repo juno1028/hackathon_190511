@@ -1,5 +1,19 @@
 {% extends "home.html" %}
 {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
   <body>
     <div class="crowd_Navbar">
       <div class="range">
@@ -62,10 +76,59 @@
     <div class="detail">
       <div class="array">
         <div class="left">
-          <pre></pre>
+        <p class="text_array">
+ 안녕하세요. 대구신명고등학교 1학년에 재학 중인 학생들이 모여있는 영화제작 자율동아리 '우드'에서 처음으로 단편영화를 제작하게 되었습니다. 부원 수도 적고 처음이라 실력도 많이 부족하지만 부원 한명 한명이 모여 함께하며, 적게라도 후원을 받아 좋은 작품이 만들어 질 수 있도록 노력하겠습니다!
+
+  자율동아리가 지원금이 없다보니 저희가 직접 사비를 모아 촬영을 해야하는 상황이 되었습니다. 부원이 10명 뿐이라 많은 부담과 걱정이 따르기에 이렇게 후원을 요청합니다. 
+ 목표 후원금보다 더 모이게 된다면 보다 더 완벽한 영화를 만들겠습니다. 
+(350,000원은 최소한의 금액이며 500,000원을 목표로 하고있습니다.)
+
+"모인 후원금은 모두 영화제작비용과 선물제작비용으로 사용될 예정입니다."
+
+선물은 영화 제작 완료 후 전달 될 예정이며, 영화 제작이 완료 될 시 공지해드리겠습니다.
+          </p>
+          <img src="{% static '밤하늘2.jpg' %}" />
         </div>
         <div class="right">
-          <div class="director"></div>
+          <div class="director">
+            <p class="director_introduce">제작자 소개</p>
+            <div class="sub_profile">
+              <img src="{% static 'books1.jpg' %}" />
+              <p class="director_name">감독이름</p>
+            </div>
+            <p class="self_introduce">
+              안녕하세요, 영화배우를 꿈꾸고 있는 고등학생 김영경입니다! 현재
+              대구신명고등학교 1학년에 재학중이며 영화제작 자율동아리 '우드'의
+              부장을 하고있습니다. 처음으로 만들어진 동아리라 많이 부족하지만
+              열심히 노력하여 좋은 작품을 만들겠습니다:)
+            </p>
+            <div class="log">
+              <div class="line_in">
+                <p class="log_status">마지막 로그인</p>
+                <p class="how_long">10시간 전</p>
+              </div>
+              <div class="line_in">
+                <p class="done_project">진행한 프로젝트</p>
+                <p class="how_many">1</p>
+                <p class="push_project">밀어준 프로젝트</p>
+                <p class="how_many">2</p>
+              </div>
+              <div class="to_producer">
+                <i class="fas fa-envelope"></i>
+                <p>창작자에게 문의하기</p>
+                <ul>
+                {% for comment in cfpost.cfcomments.all %}
+                  <li>{{ comment.cfcontent }}<a href="{% url 'comment_delete_2' cfpost.pk cfcomment.pk %}">삭제하기</a></li>
+                {% endfor %}
+                </ul>
+                <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" />
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

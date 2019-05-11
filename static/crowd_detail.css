@@ -1,0 +1,299 @@
+/* crowd_detail.html */
+
+.introduce {
+  width: 100%;
+  height: 200px;
+  /* border: 2px solid indianred; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.genre {
+  color: grey;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid rgb(228, 224, 224);
+  background-color: ghostwhite;
+}
+
+h1 {
+  margin: 0;
+}
+
+.director_name {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profile img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.main {
+  width: 100%;
+  height: 600px;
+  /* border: 2px solid indigo; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .range {
+  width: 90%;
+  height: 500px;
+  /* border: 2px solid orange; */
+  display: flex;
+  flex-direction: column;
+}
+
+.range_top {
+  width: 100%;
+  height: 500px;
+  /* border: 2px solid palegreen; */
+  display: flex;
+  flex-direction: row;
+}
+
+.range_top img {
+  width: 60%;
+  height: auto;
+}
+
+.range_top .right {
+  width: 500px;
+  height: 470px;
+  /* border: 2px solid palevioletred; */
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.no_margin {
+  margin: 0;
+}
+
+.inline {
+  height: 60px;
+  /* border: 2px solid peru; */
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 0;
+}
+.inline p {
+  margin-top: 0;
+}
+
+.big_font {
+  font-size: 30px;
+  /* color: red; */
+  margin-right: 5px;
+}
+
+.condition {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid purple; */
+  margin: 0;
+  padding-left: 20px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.condition p {
+  /* margin: 0; */
+  font-weight: bolder;
+}
+.condition pre {
+  margin: 0;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button button {
+  font-size: 15px;
+  width: 300px;
+  height: 50px;
+  color: white;
+  background-color: rgb(228, 105, 125);
+  border: rgb(228, 105, 125);
+  border-radius: 10px;
+}
+
+.button a {
+  text-decoration: none;
+}
+
+.button i {
+  color: grey;
+  margin-left: 10px;
+  font-size: 55px;
+}
+
+.sub_navbar {
+  width: 100%;
+  height: 100px;
+  /* border: 2px solid orangered; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.sub_range {
+  padding-left: 70px;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgb(146, 144, 144);
+  border-bottom: 1px solid rgb(146, 144, 144);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sub_range a {
+  margin-right: 20px;
+  font-weight: bold;
+  color: grey;
+  text-decoration: none;
+}
+.sub_range a:hover {
+  color: black;
+}
+
+.detail {
+  width: 100%;
+  /* height: 1000px; */
+  background-color: rgb(238, 236, 236);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.array {
+  width: 90%;
+  /* height: 1000px; */
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 20px;
+}
+
+.array .left {
+  width: 730px;
+  background-color: white;
+}
+
+.text_array {
+  width: 660px;
+  white-space: pre-wrap;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.array .left img {
+  width: 660px;
+  margin-left: 30px;
+}
+
+.array .right {
+  width: 370px;
+  height: 450px;
+  /* border: 1px solid saddlebrown; */
+  background-color: white;
+  padding-left: 10px;
+}
+
+.director {
+  padding-left: 10px;
+  width: 100%;
+  /* border: 1px solid salmon; */
+}
+
+.director_introduce {
+  font-weight: bold;
+}
+
+.self_introduce {
+  width: 300px;
+}
+
+.log {
+  border-top: 1px solid rgb(146, 144, 144);
+  width: 300px;
+}
+
+.line_in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.log_status {
+  font-size: 13px;
+  margin-right: 10px;
+  color: grey;
+}
+.how_long {
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+}
+.done_project {
+  font-size: 13px;
+  margin-right: 10px;
+  color: grey;
+}
+.how_many {
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  margin-right: 20px;
+}
+
+.push_project {
+  font-size: 13px;
+  margin-right: 10px;
+  color: grey;
+}
+.sub_profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.director img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.to_producer {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+}

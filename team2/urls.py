@@ -33,4 +33,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
     path('like/<int:post_pk>/', views.like, name='like'),
+    path('post/<int:post_pk>/<int:comment_pk>', views.comment_delete, name='delete_comment'),
+    path('cfpost/<int:cfpost_pk>/<int:cfcomment_pk>', views.comment_delete_2, name='delete_comment_2'),
 ]

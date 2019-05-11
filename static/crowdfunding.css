@@ -1,0 +1,207 @@
+/* crowdfunding.html */
+.post {
+  width: 250px;
+  height: 300px;
+  /* border: 1px solid royalblue; */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  background: white;
+  /* border-radius: 10px; */
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+}
+.title {
+  margin-left: 15px;
+  
+}
+
+.director {
+  margin-left: 6px;
+}
+
+.duration i {
+  margin-left: 15px;
+}
+
+.fa-chevron-down {
+  margin-left: 10px;
+}
+
+.post_bottom {
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.pre {
+  width: 100%;
+  height: 270px;
+  padding-top: 25px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.pre_text {
+  width: 90%;
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre_text_h2{
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.pre_image {
+  margin-top: 15px;
+  width: 90%;
+  /* border: 1px solid chocolate; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.pre_image div {
+  /* border: 1px solid gray; */
+}
+.pre_image img {
+  width: 156px;
+  height: 87.75px;
+  /* border-radius: 10px; */
+}
+.img_title {
+  margin-top: 5px;
+  margin-bottom: 0;
+  width: 150px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.img_subtitle {
+  margin-top: 1px;
+  margin-bottom: 0;
+  width: 100px;
+  font-size: 11px;
+  font-weight: bold;
+  color: grey;
+}
+
+
+.range {
+  margin: 0;
+}
+
+.range label {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.content {
+  width: 100%;
+  /* border: 1px solid purple; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding : 25px 0px;
+  background: rgb(238, 236, 236);
+}
+
+.content .range {
+  margin: 30px 0px;
+  width: 90%;
+  /* border: 1px solid rosybrown; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+.post img {
+  width: 250px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  /* border-radius: 10px; */
+}
+
+.post .title {
+  font-size: 14px;
+  font-weight: bold;
+  /* border: 1px solid royalblue; */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post .director {
+  margin-top: 5px;
+  margin-bottom: 3px;
+  font-size: 11px;
+  /* border: 1px solid royalblue; */
+}
+
+.post_bottom {
+  margin-top: 0;
+  /* border: 1px solid teal; */
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.duration {
+  height: 30px;
+  width: 71px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  /* border: 1px solid tan; */
+}
+
+.duration p {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+.fa-calendar-alt{
+  font-size: 10px;
+}
+
+.number {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.investment {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rate {
+  margin-left: 10px;
+  font-size: 10px;
+  font-weight: bold;
+}

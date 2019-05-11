@@ -22,7 +22,16 @@
         </div>
 
         <div class="comment">
-            댓글
+            <ul>
+            {% for comment in post.comments.all %}
+                <li>{{ comment.content }}<a href="{% url 'delete_comment' post.pk comment.pk %}">삭제하기</a></li>
+            {% endfor %}
+            </ul>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" />
+            </form>
         </div>
 
         <div class="contnet_bar">

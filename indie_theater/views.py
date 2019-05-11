@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import ViewForm, CfForm, CommentForm, UserForm
-from .models import Post, Comment, CfPost
+from .forms import ViewForm, CfForm, CommentForm, UserForm, CfCommentForm
+from .models import Post, Comment, CfPost, CfComment
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -11,8 +11,20 @@ def home(request):
     return render(request, 'home.html', { 'posts' : post } )
 
 def detail(request, post_pk):
-    post = Post.objects.get(pk=post_pk)
-    return render(request, 'detail.html', { 'post' : post })
+    if request.method == 'POST':
+        post = Post.objects.get(pk = post_pk)
+
+        form = CommentForm(request.POST)
+        comment = form.save(commit=False)
+        comment.post = post
+        comment.save()
+
+        return redirect('detail', post.pk)
+    else:
+        post = Post.objects.get(pk = post_pk)
+        form = CommentForm()
+
+        return render(request, 'detail.html', { 'post': post, 'form': form })
 
 def mypage(request):
     post = Post.objects.all()
@@ -36,8 +48,19 @@ def crowd_new(request):
         return render(request, 'crowd_new.html', {'form': form})
 
 def crowd_detail(request, cfpost_pk):
-    cfpost= CfPost.objects.get(pk=cfpost_pk)
-    return render(request, 'crowd_detail.html', { 'cfpost': cfpost })
+    if request.method == 'POST':
+        cfpost= CfPost.objects.get(pk=cfpost_pk)
+        form = CfCommentForm(request.POST)
+        cfcomment = form.save(commit=False)
+        cfcomment.cfpost = cfpost
+        cfcomment.save()
+
+        return redirect('crowd_detail', cfpost.pk)
+    else:
+        cfpost = CfPost.objects.get(pk = cfpost_pk)
+        form = CfCommentForm()
+
+        return render(request, 'crowd_detail.html', { 'cfpost': cfpost, 'form':form })
 
 def payment(request):
     return render(request, 'payment.html')
@@ -92,3 +115,15 @@ def signup(request):
     else:
         form = UserForm()
         return render(request, 'registration/signup.html', {'form' : form})
+
+def comment_delete(request, post_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+
+    comment.delete()
+    return redirect('detail', post_pk)
+
+def comment_delete_2(request, cfpost_pk, cfcomment_pk):
+    comment = CfComment.objects.get(pk=cfcomment_pk)
+
+    comment.delete()
+    return redirect('crowd_detail', cfpost_pk)

@@ -1,0 +1,62 @@
+/*mypage.html*/
+.myprofile{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    /* border: blue 1px solid; */
+  }
+  
+.my_profile{
+    display: flex;
+    width: 100%;
+    /* border: blue 3px solid; */
+    padding: 30px 40px;
+
+}
+
+.my_profile p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.profile_pic{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    /* border: blue 3px solid; */
+    margin-right: 20px;
+}
+
+.circle{
+    border-radius: 100%;
+    border: 1px solid rgb(224,224,224);
+    width: 100px;
+    height: 100px;
+}
+
+.payment_menu{
+    width: 100%;
+    height: 300px;
+    padding: 0 40px;
+    padding-top: 10px;
+    /* border: 1px solid black; */
+
+}
+
+.payment_table{
+    width: 100%;
+    padding: 0 15px;
+    
+}
+
+.table{
+    text-align: center;
+    background: rgba(255, 255, 255, 0.678);
+    margin-bottom: 40px;
+}
+
+td{
+    width: 100px;
+}
+
