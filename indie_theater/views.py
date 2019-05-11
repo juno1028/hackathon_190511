@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ViewForm, CfForm, CommentForm, UserForm
-from .models import Post, Comment
+from .models import Post, Comment, CfPost
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -22,10 +22,22 @@ def dit_detail(request):
     return render(request, 'dit_detail.html')
 
 def crowdfunding(request):
-    return render(request, 'crowdfunding.html')
+    cfpost = CfPost.objects.all()
+    return render(request, 'crowdfunding.html', { 'cfposts' : cfpost})
 
-def crowd_detail(request):
-    return render(request, 'crowd_detail.html')
+def crowd_new(request):
+    if request.method == 'POST':
+        form = CfForm(request.POST, request.FILES)
+        cfpost = form.save(commit= False)
+        cfpost.save()
+        return redirect('crowd_detail', cfpost_pk = cfpost.pk)
+    else:
+        form = CfForm()
+        return render(request, 'crowd_new.html', {'form': form})
+
+def crowd_detail(request, cfpost_pk):
+    cfpost= CfPost.objects.get(pk=cfpost_pk)
+    return render(request, 'crowd_detail.html', { 'cfpost': cfpost })
 
 def payment(request):
     return render(request, 'payment.html')
@@ -65,9 +77,6 @@ def like(request, post_pk):
     post.save()
     return redirect('detail', post.pk)
 
-        
-def crowd_detail(request):
-    return render(request, 'crowd_detail.html')
 
 def signup(request):
     if request.method == 'POST':

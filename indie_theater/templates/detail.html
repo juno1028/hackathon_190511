@@ -5,9 +5,9 @@
     <div class="detail">
         전체
         <div class="diretor_profile">
-            {{ post.director }}
+            <a href="{% url 'dit_detail' %}">{{ post.director }}</a> 
             감독 연락처
-            {{ post.img }}
+            {{ post.img.url }}
         </div>
         <div class="video">
             video<br>

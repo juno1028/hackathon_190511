@@ -38,6 +38,13 @@ class Post(models.Model):
         self.post_like = self.post_like + 1
         self.save()
         
+class CfPost(models.Model):
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    director = models.CharField(max_length=50, default = "")
+    duration = models.IntegerField(default = 0)
+    img = models.FileField(null = True)
+    
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name='comments') #댓글이 속한 글이 지워지면 댓글들도 다 지우도록 함.
     content = models.TextField()

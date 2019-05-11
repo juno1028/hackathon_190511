@@ -1,19 +1,5 @@
 {% extends "home.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
-  </head>
   <body>
     <div class="crowd_Navbar">
       <div class="range">
@@ -25,16 +11,16 @@
     {% block content %}
     <div class="introduce">
       <p class="genre">성장 드라마</p>
-      <h1>고등학생 단편영화 '종이학'</h1>
+      <h1>{{ cfpost.title }}</h1>
       <div class="profile">
           <img src="{% static 'books1.jpg' %}"/>
-        <p class="director_name">감독이름</p>
+        <p class="director_name">{{ cfpost.director }}</p>
       </div>
     </div>
     <div class="main">
       <div class="range">
         <div class="range_top">
-          <img src="{% static '밤하늘.jpg' %}"/>
+          <img src="{{ cfpost.img.url }}" />
           <div class="right">
             <p class="no_margin">모인금액</p>
             <div class="inline">
@@ -44,7 +30,7 @@
             <p class="no_margin">남은시간</p>
             <div class="inline">
               <p class="big_font">11</p>
-              <p>일</p>
+              <p>{{ cfpost.duration }}일</p>
             </div>
             <p class="no_margin">후원자</p>
             <div class="inline">
