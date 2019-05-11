@@ -26,6 +26,7 @@ body {
   float: left;
   text-transform: uppercase;
   margin: 0px;
+  color: white;
 }
 
 .menu {
@@ -149,7 +150,7 @@ body {
 
 .category {
   display: flex;
-  height: 40px;
+  height: 35px;
   width: 100vw;
   background-color: black;
   color: white;
@@ -193,23 +194,35 @@ body {
 .list {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 10px;
-  margin: 0px 15%;
+  padding-top: 10px;
+  padding: 15px 10px;
+  margin: 0 25px;
+  margin-top : 20px;
+  margin-bottom: 60px;
   height: fit-content;
-  width: 70%;
+  width: 100%;
   justify-content: flex-start;
+  background: rgb(238, 236, 236);
+
 }
 
 .thumbnail {
   margin: 10px 20px;
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
+  height: 350px;
   width: 300px;
   align-content: flex-start;
   justify-content: space-between;
+  text-decoration: none;
 
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
+}
+
+.thumbnail_txt{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
 }
 
 .poster {
@@ -219,26 +232,60 @@ body {
   margin-bottom: 5px;
 }
 
-.th_title {
-  font-weight: bold;
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
 }
 
+.th_title {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  margin-top : 5px;
+  margin-bottom: 5px;
+  
+}
+
+
 .th_content {
-  padding: 0 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: rgb(114, 113, 113);
+  
+  width: 250px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-height: X;        /* fallback */
+  max-height: X*N;       /* fallback */
+  margin-bottom: 8px;
 }
 
 .fa-play {
-  font-size: 20px;
-  margin-left: 20px;
+  color: rgb(114, 113, 113);
+  font-size: 15px;
+  padding: 0 10px;
 }
 
 .fa-heart {
+  color: rgb(114, 113, 113);
   text-align: right;
-  font-size: 20px;
-  margin-right: 20px;
+  font-size: 16px;
+  padding: 0 10px;
 }
 
 /* crowdfunding.html */

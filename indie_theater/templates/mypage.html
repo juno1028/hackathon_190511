@@ -1,38 +1,65 @@
 {% extends "home.html" %}
+{% load staticfiles %}
 
     {% block content %}
     <div class="myprofile">
-        전체
-        <div class="my_profile">
-            이름
-            연락처
-            프로필 사진
-        </div>
-
-        <div class="history">
-            내가 본 작품들
-        </div>
-
-
-        <div class="payment_menu">
-            결제창 ㄱㄱ
-        </div>
-
         
+        <div class="my_profile">
+            <div class="profile_pic"><img class="circle" src="{% static '밤하늘.jpg' %}" /></div>
+            <p>{{ user.username }}님</p>
+        </div>
+
+        <div class="category">내가 본 영화</div>
+
+        <div class="content">
+            <div class="range">
+
+            {% for post in posts %}
+            <a href="{% url 'detail' post.pk %}">
+            <div class="thumbnail">
+                <div class="poster"></div>
+                <div class="th_title">{{ post.title }}</div>
+                <div class="th_content">{{ post.content }}</div>
+                <i class="fas fa-play"> {{ post.post_hit }}</i>
+                <i class="far fa-heart"> {{ post.post_like }}</i>
+            </div>
+            </a>
+            {% endfor %}
+
+            </div> 
+        </div>
+    
     </div>
 
-    <div class="contnet_bar">
-        추천 영상
+    <div class="category">결제</div>
+    <div class="content">
+        <div class="range">
+            <div class="payment_menu">
+            </div>
+            
+        </div>
     </div>
+
+    <div class="category">추천영화</div>
+
+    <div class="content">
+        <div class="range">
+
+            {% for post in posts %}
+            <a href="{% url 'detail' post.pk %}">
+            <div class="thumbnail">
+                <div class="poster"></div>
+                <div class="th_title">{{ post.title }}</div>
+                <div class="th_content">{{ post.content }}</div>
+                <i class="fas fa-play"> {{ post.post_hit }}</i>
+                <i class="far fa-heart"> {{ post.post_like }}</i>
+            </div>
+            </a>
+            {% endfor %}
+
+        </div> 
+    </div>
+
 
     {% endblock %}
 
-<style>
-    div {
-        border: 2px solid grey;
-        margin: 10px;
-    }    
-    div div {
-        border: 2px solid blue;
-    }    
-</style>

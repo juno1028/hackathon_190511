@@ -16,17 +16,28 @@ class Post(models.Model):
     # video = models.FileField(null= True)
     img = models.FileField(null = True)
     price = models.IntegerField(default=0)
+    post_hit = models.PositiveIntegerField(default=0)
+    post_like = models.PositiveIntegerField(default=0)
+    
+    class Meta:
+        ordering = ['-id']
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', args=[str(self.id)])
+
+    @property
+    def update_counter(self):
+        self.post_hit = self.post_hit + 1
+        self.save()
     
-class CfPost(models.Model):
-    title = models.CharField(max_length=50)
-    content = models.TextField()
-    director = models.CharField(max_length=50, default = "")
-    duration = models.IntegerField(default = 0)
-    img = models.FileField(null = True)
-
-
+    @property
+    def like_update_counter(self):
+        self.post_like = self.post_like + 1
+        self.save()
+        
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name='comments') #댓글이 속한 글이 지워지면 댓글들도 다 지우도록 함.
     content = models.TextField()

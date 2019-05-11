@@ -1,9 +1,8 @@
 {% extends 'home.html' %}
 {% block content %}
-    <h2>로그인</h2>
-    <form method="POST">
+    <form method="POST" enctype='multipart/form-data'>
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="로그인">
+        <button type ="submit">수정 !</button> 
     </form>
 {% endblock %}

@@ -25,16 +25,16 @@
     {% block content %}
     <div class="introduce">
       <p class="genre">성장 드라마</p>
-      <h1>{{ cfpost.title }}</h1>
+      <h1>고등학생 단편영화 '종이학'</h1>
       <div class="profile">
           <img src="{% static 'books1.jpg' %}"/>
-        <p class="director_name">{{ cfpost.director }}</p>
+        <p class="director_name">감독이름</p>
       </div>
     </div>
     <div class="main">
       <div class="range">
         <div class="range_top">
-          <img src="{{ cfpost.img.url }}" />
+          <img src="{% static '밤하늘.jpg' %}"/>
           <div class="right">
             <p class="no_margin">모인금액</p>
             <div class="inline">
@@ -44,7 +44,7 @@
             <p class="no_margin">남은시간</p>
             <div class="inline">
               <p class="big_font">11</p>
-              <p>{{ cfpost.duration }}일</p>
+              <p>일</p>
             </div>
             <p class="no_margin">후원자</p>
             <div class="inline">

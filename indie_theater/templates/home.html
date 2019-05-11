@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"href="{% static 'home.css' %}?v=0.5"/>
+    <link rel="stylesheet" type="text/css"href="{% static 'home.css' %}"/>
 </head>
 <body>
     <div class="header">
-        <h2 class="logo">인디시에터</h2>
+        <a href="{% url 'home' %}"><h2 class="logo">indi-theater</h2></a>
         <input type="checkbox" id="chk">
         <label for="chk" class="show-menu-btn">
             <i class="fas fa-ellipsis-h"></i>
@@ -23,15 +23,16 @@
 
             {% if user.is_authenticated %}
             <div class="menu_txt">안녕하세요, {{ user.username }} 님!</div>
+            {% else%}
+            <a href="{% url 'home' %}">Home</a>
             {% endif %}
 
-            <a href="{% url 'home' %}">Home</a>
-            <a href="#">영화보기</a>
+            
             <a href="{% url 'crowdfunding' %}">크라우드 펀딩</a>
             <a href="#">극장 대관</a>
-            <a href="{% url 'dit_detail' %}">감독</a>
-
             {% if user.is_authenticated %}
+            <a href="{% url 'mypage' %}">마이 페이지</a>
+            <a href="{% url 'new' %}">Upload</a>
             <a href="{% url 'logout' %}">로그아웃</a>
             {% else %}
             <a href="{% url 'signup' %}">회원가입</a>
@@ -51,25 +52,47 @@
         <div class="sliding_content"></div>
     </div>
 
+    <div class="category">최신 영화</div>
     <div class="list">
 
         {% for post in posts %}
         <a href="{% url 'detail' post.pk %}">
         <div class="thumbnail">
             <div class="poster"></div>
-            <div class="th_title">{{ post.title }}</div>
-            <div class="th_content">{{ post.content }}</div>
-            <i class="fas fa-play"> 100</i>
-            <i class="far fa-heart"> 128</i>
+            <div class="thumbnail_txt">
+                <div class="th_title">{{ post.title }}</div>
+                <div class="th_content">{{ post.content }}</div>
+                <i class="fas fa-play"> {{ post.post_hit }} </i>
+                <i class="far fa-heart"> {{ post.post_like }} </i>
+            </div>
         </div>
         </a>
         {% endfor %}
 
+    </div>
+
+    <div class="category">5월 신작</div>
+    <div class="list">
+
+        {% for post in posts %}
+        <a href="{% url 'detail' post.pk %}">
+        <div class="thumbnail">
+            <div class="poster"></div>
+            <div class="thumbnail_txt">
+                
+                <div class="th_title">{{ post.title }}</div>
+                <div class="th_content">{{ post.content }}</div>
+                <i class="fas fa-play"> {{ post.post_hit }}</i>
+                <i class="far fa-heart"> {{ post.post_like }}</i>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
 
     </div>
     
     {% endblock %}
-    <a href="{% url 'new' %}">글쓰기</a>
+    
 </body>
 
 </html>

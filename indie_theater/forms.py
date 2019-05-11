@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment, CfPost
+from .models import Post, Comment
 from django.contrib.auth.models import User
 
 class ViewForm(forms.ModelForm): #ModelForm 임을 알려주는 구문.
@@ -9,8 +9,8 @@ class ViewForm(forms.ModelForm): #ModelForm 임을 알려주는 구문.
 
 class CfForm(forms.ModelForm):
     class Meta:
-        model = CfPost
-        fields = ('title', 'content', 'director', 'duration', 'img',  )
+        model = Post
+        fields = ('title', 'content', 'director', 'created_date', 'img',  )
 
 class CommentForm(forms.ModelForm):
     class Meta:
