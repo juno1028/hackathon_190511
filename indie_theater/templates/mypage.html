@@ -2,35 +2,33 @@
 {% load staticfiles %}
 
     {% block content %}
-    <div class="myprofile">
-        <div class="profile_box">
-            <div class="my_profile">
-                <div class="profile_pic"><img class="circle" src="{% static '밤하늘.jpg' %}" /></div>
-                <p>{{ user.username }}님</p>
-            </div>
-
-            
-            <div class="category">내가 본 영화</div>
-
-            <div class="list">
-
-                {% for post in posts %}
-                <a href="{% url 'detail' post.pk %}">
-                <div class="thumbnail">
-                    <div><img src="{{ post.img.url }}" class="poster"></div>
-                    
-                    <div class="th_title">{{ post.title }}</div>
-                    <div class="th_content">{{ post.content }}</div>
-                    <i class="fas fa-play"> {{ post.post_hit }}</i>
-                    <i class="far fa-heart"> {{ post.post_like }}</i>
-                    
-                </div>
-                </a>
-                {% endfor %}
-
-            </div>
     
+
+<div class="profile_box">
+        
+    <div class="my_profile">
+        <div class="profile_pic"><img class="circle" src="{% static '밤하늘.jpg' %}" /></div>
+        <p>{{ user.username }}님</p>
     </div>
+
+    
+    <div class="category">내가 본 영화</div>
+    <div class="list">
+        {% for post in posts %}
+        <a href="{% url 'detail' post.pk %}">
+        <div class="thumbnail">
+            <div><img src="{{ post.img.url }}" class="poster"></div>
+            
+            <div class="th_title">{{ post.title }}</div>
+            <div class="th_content">{{ post.content }}</div>
+            <i class="fas fa-play"> 100</i>
+            <i class="far fa-heart"> 128</i>    
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    
+    
 
     <div class="category">결제 내역</div>
     <div class="list">
@@ -73,24 +71,22 @@
     </div>
 
     <div class="category">추천영화</div>
+        <div class="list">
 
-    <div class="list">
+                {% for post in posts %}
+                <a href="{% url 'detail' post.pk %}">
+                <div class="thumbnail">
+                    <div><img src="{{ post.img.url }}" class="poster"></div>
+                    <div class="th_title">{{ post.title }}</div>
+                    <div class="th_content">{{ post.content }}</div>
+                    <i class="fas fa-play"> 100</i>
+                    <i class="far fa-heart"> 128</i>
+                </div>
+                </a>
+                {% endfor %}
 
-            {% for post in posts %}
-            <a href="{% url 'detail' post.pk %}">
-            <div class="thumbnail">
-                <div><img src="{{ post.img.url }}" class="poster"></div>
-                <div class="th_title">{{ post.title }}</div>
-                <div class="th_content">{{ post.content }}</div>
-                <i class="fas fa-play"> {{ post.post_hit }}</i>
-                <i class="far fa-heart"> {{ post.post_like }}</i>
-            </div>
-            </a>
-            {% endfor %}
-
+        </div>
     </div>
-    </div>
 
-
+</div>
     {% endblock %}
-

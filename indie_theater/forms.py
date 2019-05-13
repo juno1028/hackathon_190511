@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class ViewForm(forms.ModelForm): #ModelForm 임을 알려주는 구문.
     class Meta:
         model = Post
-        fields = ('title', 'director', 'content', 'rating1', 'rating2', 'rating3', 'img',  'created_date',  )
+        fields = ('title', 'director', 'content', 'img',  'created_date',  )
 
 class CfForm(forms.ModelForm):
     class Meta:
@@ -15,7 +15,7 @@ class CfForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ( 'content' , )
+        fields = ( '내용', '창의성', '시사성', '예술성' )
 
 class CfCommentForm(forms.ModelForm):
     class Meta:

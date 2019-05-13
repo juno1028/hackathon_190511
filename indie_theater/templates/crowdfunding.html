@@ -47,7 +47,7 @@
       <div class="range">
         
         <div>
-          <label><input type="checkbox" class="project_done"/>펀딩 마감된 프로젝트 보기</label>
+          <!-- <label><input type="checkbox" class="project_done"/>펀딩 마감된 프로젝트 보기</label> -->
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@
           <div class="post_bottom">
             <div class="duration">
               <i class="far fa-calendar-alt"></i>
-              <p>n일 남음</p>
+              <p>{{ cfpost.duration }}일 남음</p>
             </div>
             <div class="number">
               <p class="investment">587,000원</p>
@@ -91,7 +91,7 @@
 
         {% comment %} 재훈 추가부분 {% endcomment %}
         <div class="crowd_new">
-          <a href="{% url 'crowd_new' %}">크라우드 펀딩 받기</a>        
+          <a href="{% url 'crowd_new' %}"><button type="button" class="btn btn-secondary">크라우드 펀딩 받기</button></a>        
       </div>
     </div>
     {% endblock %}

@@ -11,7 +11,8 @@
   justify-content: center;
   /* border: 1px solid black; */
   width: 100vw;
-  
+  -webkit-flex-flow: row wrap;
+  /* border: brown 3px solid; */
 }
 
 .video_wrapper {
@@ -31,6 +32,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* border: red 3px solid; */
 }
 
 .movie_info {
@@ -85,20 +93,45 @@
   display: flex;
   flex-direction: column;
   text-align: right;
-  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+
 }
+
+.comment{
+  margin-bottom : 10px;
+}
+
+.video_info{  
+  display: flex;
+  flex-wrap: wrap;
+  /* border: red 3px solid; */
+  width: 100%;
+}
+
+.btn{
+  margin-right: 10px;
+}
+
+.btn-danger{
+  margin-left : 10px;
+}
+
 .video_title {
+  display: flex;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
 .video_date {
+  display: flex;
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 5px;
 }
 .video_actor {
+  display: flex;
   font-size: 1em;
   font-weight: bold;
 }

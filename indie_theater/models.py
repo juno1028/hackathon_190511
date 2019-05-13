@@ -8,10 +8,6 @@ class Post(models.Model):
     content = models.TextField()
     created_date = models.DateTimeField( default= timezone.now)
     # price = models.IntegerField(null=True)
-    score = ((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'))
-    rating1=models.IntegerField(choices=score, default=3,)
-    rating2=models.IntegerField(choices=score, default=3,)
-    rating3=models.IntegerField(choices=score, default=3,)
     director = models.CharField(max_length=50, default = "")
     # video = models.FileField(null= True)
     img = models.FileField(null = True)
@@ -47,7 +43,11 @@ class CfPost(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name='comments') #댓글이 속한 글이 지워지면 댓글들도 다 지우도록 함.
-    content = models.TextField()
+    내용 = models.TextField()
+    score = ((1, '★'), (2, '★★'), (3, '★★★'), (4, '★★★★'), (5, '★★★★★'))
+    창의성=models.IntegerField(choices=score, default=3,)
+    시사성=models.IntegerField(choices=score, default=3,)
+    예술성=models.IntegerField(choices=score, default=3,)
     
 class CfComment(models.Model):
     cfpost = models.ForeignKey(CfPost, on_delete = models.CASCADE, related_name='cfcomments', null=True) #댓글이 속한 글이 지워지면 댓글들도 다 지우도록 함.

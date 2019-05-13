@@ -121,11 +121,11 @@
                   <li>{{ comment.cfcontent }}<a href="{% url 'delete_comment_2' cfpost.pk cfcomment.pk %}">삭제하기</a></li>
                 {% endfor %} -->
                 </ul>
-                <form method="POST">
+                <!-- {% comment %} <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="submit" />
-                </form>
+                </form> {% endcomment %} -->
               </div>
             </div>
           </div>
